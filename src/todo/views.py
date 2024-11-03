@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import TodoItem
 
 
@@ -13,5 +13,5 @@ def add_todo(request):
         title = request.POST.get("title")
         description = request.POST.get("description")
         TodoItem.objects.create(title=title, description=description)
-        return render(request, "todo/add_todo.html")
+        return redirect("todo_list")
     return render(request, "todo/add_todo.html")
