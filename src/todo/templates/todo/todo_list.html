@@ -13,7 +13,7 @@
     <h1>To-Do List</h1>
     <ul>
       {% for todo in todos %}
-      <li>{{ todo.title }} - {% if todo.completed %} Completed {% else %} Not Completed {% endif %}</li>
+      <li>{{ todo.title }} - {% if todo.completed %} ✅ {% else %} ⏳ {% endif %}</li>
       {% endfor %}
     </ul>
     <form method="POST" action="{% url 'add_todo' %}">
